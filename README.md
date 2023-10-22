@@ -1,15 +1,15 @@
-A Python program was developed to automatically identify high risk construction sites. The criteria determing whether a building is high risk, more likely to have an accident, was based on on a logistic regression model where the outcome variable was an accident at the building in 2017. Independent variables included building characteristics, number of permits active at the site, type of building permit and buildings with accidents prior to 2017.
+The project "SafeBuild: Accident Predictor" uses a Python program to spot dangerous construction sites before bad things happen. We use a math formula to figure out which sites are risky based on past accidents and other details like:
 
-Based on the results of the model, rules were incorporate in the risk tool. Buildings with active permits were ranked from 1 to 8 on the following risk factors:
+How many active work permits the site has.
+Whether it's a new building or not.
+If the site has special permits for things like sheds or fences.
+How tall the building is.
+If there were any accidents at the site before 2017.
+The program looks at these factors and gives each site a risk score from 1 to 8. Here's how we break it down:
 
-Number of permits: 1-4 permits = 1, 5-7 = 2, 8-10 = 3, 11+ = 4
-
-Buildings with a new building: Yes = 1, No = 0
-
-Buildings with a shed, scaffold or fence permits: Yes = 1, No = 0
-
-Buildings with 10+ floors: Yes = 1, No = 0
-
-Buildings with accidents pior to 2017: Yes = 1, No = 0
-
-The Python program is run daily and it automatically calculates the risk for each building and results are presented in a D3 spatial map.
+Number of permits: Fewer than 5 gets a 1, 5-7 gets a 2, 8-10 gets a 3, and 11 or more gets a 4.
+New building: Yes scores 1, No scores 0.
+Special permits for sheds, scaffolds, or fences: Yes scores 1, No scores 0.
+Building taller than 10 floors: Yes scores 1, No scores 0.
+Accidents before 2017: Yes scores 1, No scores 0.
+We run the program every day to keep the scores up-to-date. The results are shown on an easy-to-read map.
